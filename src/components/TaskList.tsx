@@ -45,7 +45,8 @@ export function TaskList() {
         // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
         const listTask = tasks;
         const index = listTask.findIndex(task => task.id === id);
-        listTask[index].isComplete = true;
+        const taskComplete = listTask[index].isComplete;
+        listTask[index].isComplete = !taskComplete;
         setTasks([...listTask]);
 
     };
